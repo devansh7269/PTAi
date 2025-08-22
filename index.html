@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Photo AI - Enhance & Remove Background</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #000; /* black background */
+            color: #f1f1f1;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            padding: 40px 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #00d4ff;
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: #ccc;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        input[type="file"] {
+            margin: 20px 0;
+            padding: 10px;
+            background: #111;
+            color: #fff;
+            border: 2px dashed #444;
+            border-radius: 8px;
+        }
+
+        button {
+            margin: 10px;
+            padding: 12px 25px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #00d4ff, #0077ff);
+            color: white;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            background: linear-gradient(135deg, #00a3cc, #005fcc);
+        }
+
+        img {
+            margin-top: 30px;
+            max-width: 80%;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+        }
+
+        #downloadBtn {
+            display: none; /* hidden until image is ready */
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>✨ Welcome to Photo AI</h1>
+    <p>Enhance images or remove backgrounds instantly.</p>
+</header>
+
+<div class="container">
+    <input type="file" id="fileInput" accept="image/*"><br>
+    <button onclick="uploadImage('enhance')">🔹 Enhance Image</button>
+    <button onclick="uploadImage('remove_bg')">🔹 Remove Background</button>
+
+    <div>
+        <img id="outputImage" alt="Processed result will appear here">
+    </div>
+
+    <br>
+    <button id="downloadBtn" onclick="downloadImage()">⬇️ Download Image</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
